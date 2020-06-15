@@ -31,26 +31,100 @@ const printBoard = () => {
   console.log('  ---------');
   console.log('2 ' + board[2].join(' | '));
 }
-
+// if a player won horizontally on any column return true otherwise return false
 const horizontalWin = () => {
-  // Your code here to check for horizontal wins
-}
+for(let i =0; i < 3; i++){
+  if(board[i][0]== board[i][1]== board[i][2]){
+    return true;
 
+  }
+  else{
+    return false;
+  }
+}
+  
+}
+// if a player won vertically on any row,return true otherwise return false
 const verticalWin = () => {
-  // Your code here to check for vertical wins
+  for(let i =0; i < 3; i++){
+    if(board[0][i]== board[1][i]== board[2][i]){
+    
+    return true;
+  }
+
+  
+  else{
+    return false;
+  }
+}
 }
 
+
+// if a player won diagonally on any diagonal,return true otherwise return false
 const diagonalWin = () => {
-  // Your code here to check for diagonal wins
+  for(let i =0; i < 3; i++){
+    if(board[0][0]== board[1][1] && board[1][1]==board[2][2] || board[2][0]== board[1][1] && board[1][1]== board[0][2]){
+      console.log('player win')
+  
+    }
+  }
 }
 
-const checkForWin = () => {
-  // Your code here call each of the check for types of wins
-}
+
+  const checkForWin = () => {
+    if(horizontalWin() || verticalWin() || diagonalWin()) {
+    console.log(`Player ${currentMarker} won!`)
+    } else {
+      changeMarker()
+    }
+  }
 
 const ticTacToe = (row, column) => {
-  // Your code here to place a marker on the board
-  // then check for a win
+    board[row][column] = playerTurn
+    if(board[0][0]){
+     changeMarker[0][0]
+    }
+    else if(board[0][1]){
+      changeMarker[0][1]
+    }
+    else if(board[0][1]){
+        changeMarker[0][2]
+    }
+    else if(board[1][0]){
+      changeMarker[1][0]
+    }
+    else if(board[1][1]){
+      changeMarker[1][1]
+    }
+    else if(board[1][2]){
+      changeMarker[1][2]
+    }
+     else if(board[2][0]){
+  changeMarker[2][0]
+   }
+   else if(board[2][1]){
+  changeMarker[2][1]
+   }
+  else if(board[2][2]){
+  changeMarker[2][2]
+   }
+
+
+      const changeMarker = () => {
+        if(currentMarker === "X"){
+          currentMarker = "O"
+        } else {
+          currentMarker = "X"
+        
+    
+    }
+    const resetBoard = () => {
+      for (i=0; i < board.length; i++) {
+        console.log(board[i].id)
+        board[i] = null
+       
+      }  
+
 }
 
 const getPrompt = () => {
@@ -100,3 +174,5 @@ if (typeof describe === 'function') {
   getPrompt();
 
 }
+      }
+    }
