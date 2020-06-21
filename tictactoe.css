@@ -1,7 +1,24 @@
+
+ body{
+   justify-content: center;
+   margin-left: 500px;
+ } 
+
+tr{
+  display: grid;
+  grid-template-columns: 100px 100px 100px; 
+  height: 200px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 30px;
+}
 td{
-  height:150px;
-  width:150px;
+  border: 1px solid;
   text-align: center;
   border: 5px solid black;
   font-size: 100px;
+  height: 150px;
+  
+  
 }
+
